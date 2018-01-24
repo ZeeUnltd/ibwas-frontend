@@ -1,0 +1,60 @@
+ <!-- <?php
+session_start();
+if (array_key_exists('submit', $_POST)){
+  $error = [];
+
+  if(empty($_POST['fname'])){
+    $error['fname']= "Please Enter Your Firstname";
+    echo $error['fname'];
+  }else {
+    $fname = $_POST['fname'];
+    echo $fname;
+  }
+
+  if(empty($_POST['lname'])){
+    $error['lname']= "Please Enter Your Lastname";
+    echo $error['lname'];
+  }else {
+    $lname = $_POST['lname'];
+    echo $lname;
+  }
+
+  if(empty($error)){
+     $stmt = registerUser($conn, $_POST);
+    // $stmt = $conn->prepare("INSERT INTO user (firstname, lastname) VALUES (:fn,:ln)");
+    //
+    // $data =[ ':fn' => $_POST['fname'],
+    //             ':ln'=> $_POST['lname']];
+    // $stmt-> execute($data);
+    // $success = "Registration Successfully ";
+    //
+    // header("Location:/main");
+  }
+}
+?>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../www/src/style.css">
+  </head>
+  <body>
+    <fieldset>
+      <div class=main>
+        <legend><h1>Register</h1></legend>
+        <form class="" action="/register" method="POST">
+
+        <input type="text" name="fname" value="" placeholder=" Firstname">
+        <input type="text" name="lname" value="" placeholder=" Lastname">
+        <input type="submit" name="submit" value="Register">
+      </div>
+        </form>
+    </fieldset>
+
+
+
+  </body>
+</html>
